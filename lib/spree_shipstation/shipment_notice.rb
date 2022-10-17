@@ -26,6 +26,8 @@ module SpreeShipstation
       process_payment
       ship_shipment
 
+      route_create_shipment
+
       shipment
     end
 
@@ -58,5 +60,10 @@ module SpreeShipstation
         shipment.update!(shipment.order)
       end
     end
+    
+    def route_create_shipment
+      RouteCreateShipmentWorker.perform_async(shipment.id)
+    end
+
   end
 end
