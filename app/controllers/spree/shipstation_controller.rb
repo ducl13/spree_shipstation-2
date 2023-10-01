@@ -14,7 +14,7 @@ module Spree
         .per(50)
 
       respond_to do |format|
-        format.xml { render 'spree/shipstation/export', layout: false }
+        format.xml { render layout: false }
       end
     end
 
