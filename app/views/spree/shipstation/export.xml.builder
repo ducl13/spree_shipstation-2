@@ -27,7 +27,7 @@ xml.Orders(pages: (@shipments.total_count / 50.0).ceil) {
         order.shipperhq_packages.each do |package|
           xml.Package do
             xml.Weight do
-              xml.Value(package.)
+              xml.Value(package.weight)
               xml.Units("pounds") # Adjust units as necessary
             end
             xml.Dimensions do
